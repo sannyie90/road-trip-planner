@@ -12,7 +12,7 @@
         <label for="stops">Enter stops (one per line):</label><br>
         <textarea id="stops" rows="6" cols="40" placeholder="E.g., New York, NY&#10;Chicago, IL&#10;Denver, CO"></textarea><br><br>
 
-        <!-- 🔽 Trip State Dropdown -->
+        <!-- Trip State Dropdown -->
         <label for="trip-state">Select Trip State:</label><br>
         <select id="trip-state">
             <option value="Draft">Draft</option>
@@ -25,6 +25,7 @@
         <button onclick="planTrip()">Plan Trip</button>
         <button onclick="saveTrip()">Save Trip</button>
         <button onclick="loadTrip()">Load Trip</button>
+        <button onclick="resetTrip()">Reset Trip</button> <!-- New Button Added -->
     </div>
 
     <div id="map-container">
