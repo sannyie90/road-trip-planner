@@ -1,6 +1,6 @@
-let map, directionsService, directionsRenderer;
+let map, directionsService, directionsRenderer; 
 
-// Local tip suggestions by city (partial list for demo; full list should be imported or loaded externally)
+// Local tip suggestions by city (partial list for demo; full list can be imported or loaded externally)
 const localTips = {
     "Anchorage": "Explore the Alaska Wildlife Conservation Center, hike Flattop Mountain, or visit the Anchorage Museum.",
     "Chicago": "Check out Millennium Park and deep dish pizza, stroll Navy Pier, or see the Art Institute.",
@@ -26,6 +26,24 @@ function initMap() {
     directionsRenderer = new google.maps.DirectionsRenderer();
     directionsRenderer.setMap(map);
 }
+
+// Fix: Reset button now clears directions and trip info
+function resetTrip() {
+    // Clear input and dropdown
+    document.getElementById("stops").value = "";
+    document.getElementById("trip-state").value = "Draft";
+
+    // Clear trip info
+    document.getElementById("trip-info").innerHTML = "";
+
+    // Clear the map
+    if (directionsRenderer) {
+        directionsRenderer.setDirections({ routes: [] });
+    }
+
+    alert("Trip has been reset.");
+}
+
 
 function planTrip() {
     const stopsText = document.getElementById("stops").value;
