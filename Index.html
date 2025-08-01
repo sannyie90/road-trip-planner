@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Road Trip Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Road Trip Planner</h1>
+
+    <div id="trip-input">
+        <label for="stops">Enter stops (one per line):</label><br>
+        <textarea id="stops" rows="6" cols="40" placeholder="E.g., New York, NY&#10;Chicago, IL&#10;Denver, CO"></textarea><br><br>
+
+        <!-- Trip State Dropdown -->
+        <label for="trip-state">Select Trip State:</label><br>
+        <select id="trip-state">
+            <option value="Draft">Draft</option>
+            <option value="Planned">Planned</option>
+            <option value="InProgress">In Progress</option>
+            <option value="Completed">Completed</option>
+            <option value="Canceled">Canceled</option>
+        </select><br><br>
+
+        <button onclick="planTrip()">Plan Trip</button>
+        <button onclick="saveTrip()">Save Trip</button>
+        <button onclick="loadTrip()">Load Trip</button>
+        <button onclick="resetTrip()">Reset Trip</button> <!-- New Button Added -->
+    </div>
+
+    <div id="map-container">
+        <div id="map" style="height: 500px; width: 100%; margin-top: 20px;"></div>
+    </div>
+
+    <div id="trip-info" style="padding: 10px; font-weight: bold;"></div>
+
+    <script src="app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf3jF4XVKaryp4V1vIBttVbx-PWutyhUA&callback=initMap"></script>
+</body>
+</html>
